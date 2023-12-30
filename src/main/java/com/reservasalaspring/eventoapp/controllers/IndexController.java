@@ -1,4 +1,4 @@
-package com.reservasalaspring.eventoapp;
+package com.reservasalaspring.eventoapp.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
