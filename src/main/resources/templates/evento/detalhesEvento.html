@@ -26,12 +26,15 @@
 			<p>Horario: <span th:text="${evento.horario}"></span></p>
 		</div>
 		
+		<th:block th:include="mensagemValidacao"></th:block>
+		
 		<form method="post" th:object="${convidado}">
 			Nome: <input type="text" value="" name="nomeConvidado" placeholder="Nome Completo"/>
 			Rg: <input type="text" value="" name="rg" placeholder="AA-00.000.000" />
 			<button class="waves-effect waves-light btn" type="submit">Adicionar</button>
 		</form>
 	</div>
+	
 
 	<script type="text/javascript" src="materialize/js/materialize.min.js"></script>
 </body>
