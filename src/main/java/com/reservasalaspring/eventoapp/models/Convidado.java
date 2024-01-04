@@ -2,20 +2,21 @@ package com.reservasalaspring.eventoapp.models;
 
 
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
 import jakarta.validation.constraints.NotEmpty;
 
-
-
 @Entity
 public class Convidado {
 	
 	@Id
+	@Column(length = 12)
 	@NotEmpty
 	private String rg;
 	
+	@Column(length = 60)
 	@NotEmpty
 	private String nomeConvidado;
 	
