@@ -26,9 +26,9 @@
 			<p>Horario: <span th:text="${evento.horario}"></span></p>
 		</div>
 		
-		<form method="post">
-			Nome: <input type="text" value="" name="/nomeConvidado"/>
-			Rg: <input type="text" value="" name="rg"/>
+		<form method="post" th:object="${convidado}">
+			Nome: <input type="text" value="" name="nomeConvidado" placeholder="Nome Completo"/>
+			Rg: <input type="text" value="" name="rg" placeholder="AA-00.000.000" />
 			<button class="waves-effect waves-light btn" type="submit">Adicionar</button>
 		</form>
 	</div>
