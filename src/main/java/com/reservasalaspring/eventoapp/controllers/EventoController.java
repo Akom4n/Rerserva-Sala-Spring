@@ -33,11 +33,11 @@ public class EventoController {
 
 	@RequestMapping(value = "/cadastrarEvento", method = RequestMethod.POST)
 	public String form(@Valid Evento evento, BindingResult result, RedirectAttributes attributes) {
-		if(result.hasErrors()) {
+		if (result.hasErrors()) {
 			attributes.addFlashAttribute("mensagem", "Verifique os campos!");
 			return "redirect:/cadastrarEvento";
 		}
-		
+
 		er.save(evento);
 		attributes.addFlashAttribute("mensagem", "Evento cadastrado com sucesso!");
 		return "redirect:/cadastrarEvento";
@@ -51,18 +51,40 @@ public class EventoController {
 		return mv;
 	}
 
-	@RequestMapping(value="/{codigo}", method = RequestMethod.GET)
+	@RequestMapping(value = "/{codigo}", method = RequestMethod.GET)
 	public ModelAndView detalhesEvento(@PathVariable("codigo") long codigo) {
 		Evento evento = er.findByCodigo(codigo);
 		ModelAndView mv = new ModelAndView("evento/detalhesEvento");
 		mv.addObject("evento", evento);
 
+		Iterable<Convidado> convidados = cr.findByEvento(evento);
+		mv.addObject("convidados", convidados);
+
 		return mv;
 	}
 
+	@RequestMapping("/deletarEvento")
+	public String deletarEvento(long codigo) {
+		Evento evento = er.findByCodigo(codigo);
+		er.delete(evento);
+		return "redirect:/eventos";
+	}
+	
+	@RequestMapping("/deletarConvidado")
+	public String deletarConvidado(String rg) {
+		Convidado convidado = cr.findByRg(rg);
+		cr.delete(convidado);
+		
+		Evento evento = convidado.getEvento();
+		long codigoLong = evento.getCodigo();
+		String codigo = "" + codigoLong;
+		return "redirect:/" + codigo;
+	}
+	
 	@PostMapping("/{codigo}")
-	public String detalhesEventoPost(@PathVariable("codigo") long codigo, @Valid Convidado convidado, BindingResult result, RedirectAttributes attributes) {
-		if(result.hasErrors()) {
+	public String detalhesEventoPost(@PathVariable("codigo") long codigo, @Valid Convidado convidado,
+			BindingResult result, RedirectAttributes attributes) {
+		if (result.hasErrors()) {
 			attributes.addFlashAttribute("mensagem", "Verifique os campos!");
 			return "redirect:/{codigo}";
 		}

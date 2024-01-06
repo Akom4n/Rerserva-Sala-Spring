@@ -3,6 +3,7 @@ package com.reservasalaspring.eventoapp.models;
 import java.io.Serializable;
 import java.util.List;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -31,7 +32,7 @@ public class Evento implements Serializable{
 	@NotEmpty
 	private String horario;
 	
-	@OneToMany
+	@OneToMany( mappedBy="evento", cascade=CascadeType.ALL, orphanRemoval=true)
 	private List<Convidado> convidados;
 	
 	
