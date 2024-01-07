@@ -26,12 +26,12 @@ public class EventoController {
 	@Autowired
 	private ConvidadoRepository cr;
 
-	@RequestMapping(value = "/cadastrarEvento", method = RequestMethod.GET)
+	@RequestMapping(value="/cadastrarEvento", method=RequestMethod.GET)
 	public String form() {
 		return "evento/formEvento";
 	}
 
-	@RequestMapping(value = "/cadastrarEvento", method = RequestMethod.POST)
+	@RequestMapping(value="/cadastrarEvento", method=RequestMethod.POST)
 	public String form(@Valid Evento evento, BindingResult result, RedirectAttributes attributes) {
 		if (result.hasErrors()) {
 			attributes.addFlashAttribute("mensagem", "Verifique os campos!");
@@ -42,18 +42,16 @@ public class EventoController {
 		attributes.addFlashAttribute("mensagem", "Evento cadastrado com sucesso!");
 		return "redirect:/cadastrarEvento";
 	}
-
-	//Commit meramente ilustrativo
 	
 	@RequestMapping("/eventos")
 	public ModelAndView listaEventos() {
-		ModelAndView mv = new ModelAndView("/listaEventos");
+		ModelAndView mv = new ModelAndView("listaEventos");
 		Iterable<Evento> eventos = er.findAll();
 		mv.addObject("eventos", eventos);
 		return mv;
 	}
 
-	@RequestMapping(value = "/{codigo}", method = RequestMethod.GET)
+	@RequestMapping(value="/{codigo}", method=RequestMethod.GET)
 	public ModelAndView detalhesEvento(@PathVariable("codigo") long codigo) {
 		Evento evento = er.findByCodigo(codigo);
 		ModelAndView mv = new ModelAndView("evento/detalhesEvento");
