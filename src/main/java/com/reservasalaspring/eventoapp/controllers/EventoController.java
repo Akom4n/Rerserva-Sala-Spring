@@ -43,9 +43,11 @@ public class EventoController {
 		return "redirect:/cadastrarEvento";
 	}
 
+	//Commit meramente ilustrativo
+	
 	@RequestMapping("/eventos")
 	public ModelAndView listaEventos() {
-		ModelAndView mv = new ModelAndView("/index");
+		ModelAndView mv = new ModelAndView("/listaEventos");
 		Iterable<Evento> eventos = er.findAll();
 		mv.addObject("eventos", eventos);
 		return mv;
@@ -70,17 +72,6 @@ public class EventoController {
 		return "redirect:/eventos";
 	}
 	
-	@RequestMapping("/deletarConvidado")
-	public String deletarConvidado(String rg) {
-		Convidado convidado = cr.findByRg(rg);
-		cr.delete(convidado);
-		
-		Evento evento = convidado.getEvento();
-		long codigoLong = evento.getCodigo();
-		String codigo = "" + codigoLong;
-		return "redirect:/" + codigo;
-	}
-	
 	//Alteração meramente ilustrativa, sorry
 	
 	@PostMapping("/{codigo}")
@@ -95,5 +86,16 @@ public class EventoController {
 		cr.save(convidado);
 		attributes.addFlashAttribute("mensagem", "Convidado adicionado com sucesso");
 		return "redirect:/{codigo}";
+	}
+	
+	@RequestMapping("/deletarConvidado")
+	public String deletarConvidado(String rg) {
+		Convidado convidado = cr.findByRg(rg);
+		cr.delete(convidado);
+		
+		Evento evento = convidado.getEvento();
+		long codigoLong = evento.getCodigo();
+		String codigo = "" + codigoLong;
+		return "redirect:/" + codigo;
 	}
 }
