@@ -72,8 +72,6 @@ public class EventoController {
 		return "redirect:/eventos";
 	}
 	
-	//Alteração meramente ilustrativa, sorry
-	
 	@PostMapping("/{codigo}")
 	public String detalhesEventoPost(@PathVariable("codigo") long codigo, @Valid Convidado convidado,
 			BindingResult result, RedirectAttributes attributes) {
