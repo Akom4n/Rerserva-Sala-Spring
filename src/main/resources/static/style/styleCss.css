@@ -1,3 +1,8 @@
+body{
+	background-color: #bdbdbd;
+	background-image: linear-gradient(#000000 0%, #bdbdbd 50%);
+	background-repeat: no-repeat;
+}
 .detalhesEvento{
 	box-shadow: 0px 0px 5px grey;
 	padding-top: 20px;
@@ -29,4 +34,21 @@
     background-color: #000000 !important;
     font-size: 14px;
     font-weight: bold;
+}
+.waves-effect{
+	right: 30px;
+}
+
+.brand-logo{
+	left: 30px;
+}
+
+.descricaoh1{
+	font-size: 70px;
+	text-align: center;
+}
+
+.descricaoh2{
+	font-size: 30px;
+	text-align: center;
 }
