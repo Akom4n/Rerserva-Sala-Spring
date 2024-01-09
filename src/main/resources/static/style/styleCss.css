@@ -52,3 +52,8 @@ body{
 	font-size: 30px;
 	text-align: center;
 }
+
+.btn-small{
+	text-align: center;
+	right: 30px;
+}
