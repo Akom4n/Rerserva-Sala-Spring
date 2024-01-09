@@ -36,7 +36,7 @@ body{
     font-weight: bold;
 }
 .waves-effect{
-	right: 30px;
+	right: 50px;
 }
 
 .brand-logo{
@@ -51,10 +51,4 @@ body{
 .descricaoh2{
 	font-size: 30px;
 	text-align: center;
-}
-
-.btn {
-	margin: 20px;
-	text-align: center;
-	border: 1px;
 }
