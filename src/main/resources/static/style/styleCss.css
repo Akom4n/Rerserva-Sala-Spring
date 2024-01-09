@@ -53,7 +53,8 @@ body{
 	text-align: center;
 }
 
-.buttons {
+.btn {
+	margin: 20px;
 	text-align: center;
 	border: 1px;
 }
