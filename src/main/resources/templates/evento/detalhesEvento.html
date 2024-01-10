@@ -49,7 +49,7 @@
 
 			<p class="textDetalhesEvento">Nome: </p><input type="text" value="" name="nomeConvidado" placeholder="Nome Completo" pattern="[a-z A-Z]+" maxlength="40"/>
 			<p class="textDetalhesEvento">Rg: </p><input type="text" value="" name="rg" placeholder="000.000.000-0" pattern="[0-9]{10}" maxlength="10" minlength="10"
-                class="validate" /> />
+                class="validate" />
 			<button class="waves-effect waves-light btn-small" type="submit"><i class="material-icons right">send</i>Adicionar</button>
 
 		</form>
@@ -70,7 +70,7 @@
 
 				<td><a class="waves-effect waves-light btn-small"
 						th:href="${(#mvc.url('EC#deletarConvidado').arg(0, convidado.rg)).build()}"><i
-							class="material-icons left">delete</i></a></td>
+							class="material-icons">delete</i></a></td>
 
 			</tr>
 		</tbody>
