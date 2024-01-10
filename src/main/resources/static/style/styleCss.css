@@ -1,7 +1,6 @@
 body{
 	background-color: #bdbdbd;
-	background-image: linear-gradient(#000000 0%, #bdbdbd 50%);
-	background-repeat: no-repeat;
+	background-image: url("https://www.transparenttextures.com/patterns/arches.png");
 }
 .detalhesEvento{
 	box-shadow: 0px 0px 5px grey;
@@ -44,16 +43,46 @@ body{
 }
 
 .descricaoh1{
+	font-weight: bold;
 	font-size: 70px;
 	text-align: center;
+	top: 5%;
 }
 
 .descricaoh2{
-	font-size: 30px;
+	font-size: 35px;
 	text-align: center;
+	
 }
 
 .btn-small{
 	text-align: center;
 	right: 1px;
+}
+
+
+.textFormEvento{
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+	font-style: italic;
+	font-weight: bold;
+	
+}
+
+.textDetalhesEvento{
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+	font-style: italic;
+	font-weight: bold;
+}
+
+.textDetalhesEventoTitulo {
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	font-weight: bold;
+}
+
+.container{
+	background-color: #bdbdbd;
+}
+
+.teste{
+	box-shadow: 0px 0px 5px grey;
 }
