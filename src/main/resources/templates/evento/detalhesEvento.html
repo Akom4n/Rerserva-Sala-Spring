@@ -14,15 +14,6 @@
 
 	<link rel="stylesheet" href="style/styleCss.css" />
 
-	 <!--Import Google Icon Font-->
-      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
-      <!--Import materialize.css-->
-      <link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css"  media="screen,projection"/>
-
-      <!--Let browser know website is optimized for mobile-->
-      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-      
-      <link rel="stylesheet" href="style/styleCss.css"/>
 
 </head>
 
@@ -61,10 +52,6 @@
 			<p class="textDetalhesEvento">Rg: </p><input type="text" value="" name="nomeConvidado" placeholder="Nome Completo" pattern="[a-z A-Z]+" maxlength="40"/>
 			<button class="waves-effect waves-light btn-small" type="submit"><i class="material-icons right">send</i>Adicionar</button>
 
-			Nome: <input type="text" value="" name="nomeConvidado" placeholder="Nome Completo"/>
-			Rg: <input type="text" value="" name="rg" placeholder="AA-00.000.000" class="validate"/>
-			<button class="waves-effect waves-light btn-small" type="submit">Adicionar</button>
-
 		</form>
 	</div>
 
@@ -84,8 +71,6 @@
 				<td><a class="waves-effect waves-light btn-small"
 						th:href="${(#mvc.url('EC#deletarConvidado').arg(0, convidado.rg)).build()}"><i
 							class="material-icons left">delete</i></a></td>
-
-				<td><a class="waves-effect waves-light btn-small" th:href="${(#mvc.url('EC#deletarConvidado').arg(0, convidado.rg)).build()}"><i class="material-icons left">delete</i></a></td>
 
 			</tr>
 		</tbody>
