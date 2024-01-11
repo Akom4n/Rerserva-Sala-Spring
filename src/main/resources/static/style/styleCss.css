@@ -1,15 +1,16 @@
-body{
+body {
 	background-color: #bdbdbd;
 	background-image: url("https://www.transparenttextures.com/patterns/arches.png");
 }
-.detalhesEvento{
+
+.detalhesEvento {
 	box-shadow: 0px 0px 5px grey;
 	padding-top: 20px;
 	padding-left: 20px;
 	margin-bottom: 60px;
 }
 
-.formConvidado{
+.formConvidado {
 	box-shadow: 0px 0px 5px grey;
 	padding-top: 20px;
 	padding-left: 20px;
@@ -17,11 +18,11 @@ body{
 	margin-bottom: 60px;
 }
 
-.tabelaConvidado{
+.tabelaConvidado {
 	width: 50%;
 }
 
-.formEvento{
+.formEvento {
 	box-shadow: 0px 0px 5px grey;
 	padding-top: 20px;
 	padding-left: 20px;
@@ -30,45 +31,59 @@ body{
 }
 
 .nav-wrapper {
-    background-color: #000000 !important;
-    font-size: 14px;
-    font-weight: bold;
+	background-color: #000000 !important;
+	font-size: 14px;
+	font-weight: bold;
 }
-.waves-effect{
+
+.waves-effect {
 	right: 30px;
 }
 
-.brand-logo{
+.brand-logo {
 	left: 30px;
 }
 
-.descricaoh1{
+.descricaoh1 {
 	font-weight: bold;
 	font-size: 70px;
 	text-align: center;
 	top: 5%;
 }
 
-.descricaoh2{
+.descricaoh2 {
 	font-size: 35px;
 	text-align: center;
-	
+
 }
 
-.btn-small{
+.btn-small {
 	text-align: center;
 	right: 1px;
 }
 
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+.textFormEvento {
+=======
+=======
+>>>>>>> 2f9128b86be1d08facef7b69fbcf9154f8e8ccfa
+=======
+>>>>>>> 2f9128b86be1d08facef7b69fbcf9154f8e8ccfa
+>>>>>>> Stashed changes
 
 .textFormEvento{
+>>>>>>> 2f9128b86be1d08facef7b69fbcf9154f8e8ccfa
 	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 	font-style: italic;
 	font-weight: bold;
-	
+
 }
 
-.textDetalhesEvento{
+.textDetalhesEvento {
 	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 	font-style: italic;
 	font-weight: bold;
@@ -79,10 +94,31 @@ body{
 	font-weight: bold;
 }
 
-.container{
+.container {
 	background-color: #bdbdbd;
 }
 
-.teste{
+.teste {
 	box-shadow: 0px 0px 5px grey;
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+}
+
+.textDetalhesEventoBottom {
+
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+	font-style: italic;
+	font-weight: bold;
+
+
+=======
+>>>>>>> 2f9128b86be1d08facef7b69fbcf9154f8e8ccfa
+=======
+>>>>>>> 2f9128b86be1d08facef7b69fbcf9154f8e8ccfa
+=======
+>>>>>>> 2f9128b86be1d08facef7b69fbcf9154f8e8ccfa
+>>>>>>> Stashed changes
 }
