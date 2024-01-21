@@ -24,5 +24,5 @@ public class Roles {
 	private Long id;
 	
 	private String name;
-
+	
 }
