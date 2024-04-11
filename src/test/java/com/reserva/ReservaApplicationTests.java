@@ -1,13 +1,13 @@
-package com.reservasalaspring.eventoapp;
+package com.reserva;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class EventoappApplicationTests {
+class ReservaApplicationTests {
 
-	@Test
-	void contextLoads() {
-	}
+    @Test
+    void contextLoads() {
+    }
 
 }

@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt"
-		xmlns="http://www.w3.org/1999/xhtml" 
-		xmlns:th="http://thymeleaf.org">
+      xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <head>
 
-</head>	
-<body>	
-<div class="alert alert-success alert-dismissible" role="alert" th:if="${not #strings.isEmpty(mensagem)}">
-	
-	<span th:text="${mensagem}"></span>
+</head>
+<body>
+    <div class="alert alert-sucess alert-dismissible card-panel light-blue darken-4" role="alert" th:if="${not #strings.isEmpty(mensagem)}">
+
+        <span th:text="${mensagem}"></span>
 </div>
-</body>						
+</body>
 </html>
