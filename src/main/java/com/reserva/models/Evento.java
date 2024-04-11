@@ -33,6 +33,10 @@ public class Evento implements Serializable {
     private String data;
     @NotEmpty
     private String horario;
+    @NotEmpty
+    private String horarioFinal;
+    @NotEmpty
+    private String detalhes;
 
     @OneToMany
     private List<Convidado> convidados;
