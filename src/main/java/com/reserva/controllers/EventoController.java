@@ -6,12 +6,10 @@ import com.reserva.repository.ConvidadoRepository;
 import com.reserva.repository.EventoRepository;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -32,6 +30,11 @@ public class EventoController {
 
     @RequestMapping(value="/cadastrarEvento", method=RequestMethod.POST)
     public String form(@Valid Evento evento, BindingResult result, RedirectAttributes attributes){
+        if (evento.getHorario().equals(evento.getHorarioFinal())){
+            attributes.addFlashAttribute("mensagem", "Horarios não podem ser iguais!");
+            evento.setHorarioInvalido(true);
+            return "redirect:/cadastrarEvento";
+        }
         if(result.hasErrors()){
             attributes.addFlashAttribute("mensagem", "Verifique os campos!");
             return "redirect:/cadastrarEvento";

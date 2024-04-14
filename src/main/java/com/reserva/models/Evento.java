@@ -2,12 +2,17 @@ package com.reserva.models;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.io.Serializable;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.Date;
 import java.util.List;
 import java.util.UUID;
@@ -31,13 +36,26 @@ public class Evento implements Serializable {
     private String local;
     @NotEmpty
     private String data;
-    @NotEmpty
-    private String horario;
-    @NotEmpty
-    private String horarioFinal;
+
+    @NotNull
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm")
+    private LocalTime horario;
+    @NotNull
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm")
+    private LocalTime horarioFinal;
+
+    @Setter
+    @Transient // Atributo não persistido no banco de dados
+    private boolean horarioInvalido;
+
     @NotEmpty
     private String detalhes;
 
     @OneToMany
     private List<Convidado> convidados;
+
+    public boolean isHorarioInvalido() {
+        return horarioInvalido;
+    }
+
 }
