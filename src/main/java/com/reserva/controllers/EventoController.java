@@ -1,13 +1,12 @@
 package com.reserva.controllers;
 
+
 import com.reserva.models.Convidado;
 import com.reserva.models.Evento;
 import com.reserva.repository.ConvidadoRepository;
 import com.reserva.repository.EventoRepository;
-import jakarta.validation.ConstraintViolationException;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
@@ -34,8 +33,13 @@ public class EventoController {
     @RequestMapping(value="/cadastrarEvento", method=RequestMethod.POST)
     public String form(@Valid Evento evento, BindingResult result, RedirectAttributes attributes){
         try {
+            if(evento.getHorario().isAfter(evento.getHorarioFinal())){
+                    attributes.addFlashAttribute("mensagem", "Horario incompativel, por favor alterar!");
+                    evento.setHorarioInvalido(true);
+                    return "redirect:/cadastrarEvento";
+            }
             if (evento.getHorario().equals(evento.getHorarioFinal())) {
-                attributes.addFlashAttribute("mensagem", "Horarios não podem ser iguais!");
+                attributes.addFlashAttribute("mensagem", "Horario incompativel, por favor alterar!");
                 evento.setHorarioInvalido(true);
                 return "redirect:/cadastrarEvento";
             }
