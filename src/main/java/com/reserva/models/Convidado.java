@@ -1,8 +1,6 @@
 package com.reserva.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.NotEmpty;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -16,15 +14,21 @@ import java.io.Serializable;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
+@Table(name = "convidado", uniqueConstraints = @UniqueConstraint(columnNames = {"rg"}))
 public class Convidado implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
     @NotEmpty
+    @Column(nullable = false)
     private String rg;
 
     @NotEmpty
+    @Column(nullable = false)
     private String nomeConvidado;
 
     @ManyToOne

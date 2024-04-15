@@ -4,6 +4,7 @@ import com.reserva.models.Convidado;
 import com.reserva.models.Evento;
 import com.reserva.repository.ConvidadoRepository;
 import com.reserva.repository.EventoRepository;
+import jakarta.validation.ConstraintViolationException;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -21,6 +22,8 @@ public class EventoController {
 
     @Autowired
     private ConvidadoRepository cr;
+    @Autowired
+    private ConvidadoRepository convidadoRepository;
 
     @RequestMapping(value="/cadastrarEvento", method=RequestMethod.GET)
     public String form()
@@ -75,10 +78,25 @@ public class EventoController {
 
     @PostMapping("/{codigo}")
     public String detalhesEventoPost(@PathVariable("codigo") long codigo, @Valid Convidado convidado, BindingResult result, RedirectAttributes attributes){
-        if(result.hasErrors()){
-            attributes.addFlashAttribute("mensagem", "Verifique os campos!");
-            return "redirect:/{codigo}";
+        try {
+            // Verifica se o RG já existe
+            Convidado existente = convidadoRepository.findByRg(convidado.getRg());
+            if (existente != null) {
+                attributes.addFlashAttribute("mensagem", "RG já cadastrado! Digite um novo RG");
+                return "redirect:/{codigo}";
+            }
+            if(result.hasErrors()){
+                attributes.addFlashAttribute("mensagem", "Verifique os campos!");
+                return "redirect:/{codigo}";
+            }
+
+            cr.save(convidado);
         }
+        catch (Exception e) {
+                attributes.addFlashAttribute("mensagem", "Verifique!");
+                return "redirect:/{codigo}";
+            }
+
         Evento evento = er.findByCodigo(codigo);
         convidado.setEvento(evento);
         cr.save(convidado);
