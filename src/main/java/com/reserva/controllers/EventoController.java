@@ -30,6 +30,7 @@ public class EventoController {
         return "evento/formEvento";
     }
 
+    //Toda a logica e verificação de cadastro de eventos fica aqui.
     @RequestMapping(value="/cadastrarEvento", method=RequestMethod.POST)
     public String form(@Valid Evento evento, BindingResult result, RedirectAttributes attributes){
         try {
@@ -66,6 +67,7 @@ public class EventoController {
         return mv;
     }
 
+    //Retorno dos detalhes do evento, quando clicado em cima do evento
     @RequestMapping(value= "/{codigo}", method=RequestMethod.GET)
     public ModelAndView detalhesEvento(@PathVariable("codigo") long codigo){
         Evento evento = er.findByCodigo(codigo);
@@ -78,6 +80,7 @@ public class EventoController {
         return mv;
     }
 
+    //Deletar eventos....
     @RequestMapping("/deletarEvento")
     public String deletarEvento(long codigo) {
         Evento evento = er.findByCodigo(codigo);
@@ -85,6 +88,7 @@ public class EventoController {
         return "redirect:/eventos";
     }
 
+    //Aqui fica a parte de adicionar convidados a um evento, toda logica e verificação ficam aqui.
     @PostMapping("/{codigo}")
     public String detalhesEventoPost(@PathVariable("codigo") long codigo, @Valid Convidado convidado, BindingResult result, RedirectAttributes attributes){
         try {
@@ -111,6 +115,7 @@ public class EventoController {
             }
     }
 
+    //Bom... aqui vc deleta o convidado
     @RequestMapping("/deletarConvidado")
     public String deletarConvidado(String rg) {
         Convidado convidado = cr.findByRg(rg);
