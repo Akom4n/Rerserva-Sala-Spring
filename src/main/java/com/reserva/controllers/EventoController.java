@@ -33,19 +33,24 @@ public class EventoController {
 
     @RequestMapping(value="/cadastrarEvento", method=RequestMethod.POST)
     public String form(@Valid Evento evento, BindingResult result, RedirectAttributes attributes){
-        if (evento.getHorario().equals(evento.getHorarioFinal())){
-            attributes.addFlashAttribute("mensagem", "Horarios não podem ser iguais!");
-            evento.setHorarioInvalido(true);
+        try {
+            if (evento.getHorario().equals(evento.getHorarioFinal())) {
+                attributes.addFlashAttribute("mensagem", "Horarios não podem ser iguais!");
+                evento.setHorarioInvalido(true);
+                return "redirect:/cadastrarEvento";
+            }
+            if (result.hasErrors()) {
+                attributes.addFlashAttribute("mensagem", "Verifique os campos!");
+                return "redirect:/cadastrarEvento";
+            }
+            er.save(evento);
+            attributes.addFlashAttribute("mensagem", "Evento cadastrado com sucesso!");
             return "redirect:/cadastrarEvento";
-        }
-        if(result.hasErrors()){
-            attributes.addFlashAttribute("mensagem", "Verifique os campos!");
-            return "redirect:/cadastrarEvento";
-        }
 
-        er.save(evento);
-        attributes.addFlashAttribute("mensagem", "Evento cadastrado com sucesso!");
-        return "redirect:/cadastrarEvento";
+        }catch (Exception e){
+            attributes.addFlashAttribute("mensagem", "Os campos não podem estar nulos");
+            return "redirect:/cadastrarEvento";
+        }
     }
 
     //Retornando inicialmente lista de eventos

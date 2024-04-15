@@ -94,3 +94,23 @@ body {
     font-weight: bold;
 }
 
+.alert{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-style: italic;
+    font-weight: bold;
+    color: white;
+}
+
+.card-panel{
+    text-align: center;
+    padding-top: 10px;
+    padding-left: 5px;
+    padding-bottom: 10px;
+    margin-left: 800px;
+    margin-right: 800px;
+    margin-bottom: 10px;
+}
+
+
+
+
