@@ -90,18 +90,16 @@ public class EventoController {
                 return "redirect:/{codigo}";
             }
 
+            Evento evento = er.findByCodigo(codigo);
+            convidado.setEvento(evento);
             cr.save(convidado);
+            attributes.addFlashAttribute("mensagem", "Convidado adicionado com sucesso!");
+            return "redirect:/{codigo}";
         }
         catch (Exception e) {
                 attributes.addFlashAttribute("mensagem", "Verifique!");
                 return "redirect:/{codigo}";
             }
-
-        Evento evento = er.findByCodigo(codigo);
-        convidado.setEvento(evento);
-        cr.save(convidado);
-        attributes.addFlashAttribute("mensagem", "Convidado adicionado com sucesso!");
-        return "redirect:/{codigo}";
     }
 
     @RequestMapping("/deletarConvidado")
