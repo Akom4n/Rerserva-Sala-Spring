@@ -7,6 +7,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.Cascade;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.io.Serializable;
@@ -51,7 +52,7 @@ public class Evento implements Serializable {
     @NotEmpty
     private String detalhes;
 
-    @OneToMany
+    @OneToMany(mappedBy = "evento", orphanRemoval = true, cascade = CascadeType.PERSIST)
     private List<Convidado> convidados;
 
     public boolean isHorarioInvalido() {
