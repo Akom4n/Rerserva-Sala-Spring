@@ -126,4 +126,6 @@ public class EventoController {
         String codigo = "" + codigoLong;
         return "redirect:/" + codigo;
     }
+
+    //Criar detalhes de eventos aqui
 }

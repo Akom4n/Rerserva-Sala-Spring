@@ -1,118 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ProjectP</title>
-  <link rel="stylesheet" href="style/styleCss.css" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+    <title>Index</title>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="/materialize/css/materialize.min.css" media="screen,projection" />
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/style/styleCss.css" />
 </head>
+
 <body>
-    <header>
-      <nav class="navbar-index">
-        <div class="nav-logo">
-          <a href="#" class="logo"><!--<img src=".png" alt="logo">-->ProjectP</a>
+
+<header>
+    <nav class="menu">
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo">Lista de Eventos</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="/eventos" class="waves-effect waves-light btn"><i
+                        class="material-icons left">format_list_bulleted</i>Lista de evento</a></li>
+                <li><a href="/cadastrarEvento" class="waves-effect waves-light btn"><i
+                        class="material-icons left">add_circle_outline</i>Cadastrar evento</a></li>
+            </ul>
         </div>
-        <div class="address">
-          <a href="#" class="deliver">Locais</a>
-          <div class="map-icon">
-            <span class="material-symbols-outlined">location_on</span>
-            <a href="#" class="location">Rio de Janeiro</a>
-          </div>
-        </div>
+    </nav>
 
-        <div class="nav-search">
+</header>
 
-          <input type="text" placeholder="Search" class="search-input">
-          <div class="search-icon">
-            <span class="material-symbols-outlined">search</span>
-          </div>
-        </div>
+<h1 class="descricaoh1">Sistema para cadastro de eventos!!</h1>
+<h3 class="descricaoh2">Faça seu Login e cadastre seus eventos e listas de convidados!</h3>
 
-        <div class="sign-in">
-         <a href="#"> <p>Crie seu</p>
-          <span>Evento</span></a>
-        </div>
-
-        <div class="account-index">
-            <span class="material-symbols-outlined account-icon">person</span>
-          <a href="#"><p class="sign-in">Cadastre-se</p></a>
-        </div>
-
-        <div class="account-index">
-          <a href="#">
-            <span class="material-symbols-outlined account-icon">login</span>
-          </a>
-            <p class="sign-in">Login</p>
-        </div>
-      </nav>
-    </header>
-
-  <section class="hero-section"></section>
-
-    <section class="shop-section">
-      <div class="shop-images">
-        <div class="shop-link">
-          <h3>Evento1</h3>
-          <img src="foto1.png" alt="card">
-          <a href="#">Ingressos a venda!!</a>
-        </div>
-        <div class="shop-link">
-          <h3>Evento 2</h3>
-          <img src="foto2.png" alt="card">
-          <a href="#">Compre aqui!</a>
-        </div>
-        <div class="shop-link">
-          <h3>Evento 3</h3>
-          <img src="foto3.jpg" alt="card">
-          <a href="#">Já disponível!!</a>
-        </div>
-        <div class="shop-link">
-          <h3>Evento 4</h3>
-          <img src="foto4.jpg" alt="card">
-          <a href="#">Agende seu acento!!</a>
-        </div>
-      </div>
-    </section>
-
-  <footer>
-      <a href="#" class="footer-title">
-        Voltar ao topo
-      </a>
-      <div class="footer-items">
-        <ul>
-          <h3>Sobre</h3>
-          <li><a href="#">Texto exemplo</a></li>
-          <li><a href="#">Texto exemplo</a></li>
-          <li><a href="#">Texto exemplo</a></li>
-          <li><a href="#">Texto exemplo</a></li>
-        </ul>
-        <ul>
-          <h3>Fale conosco</h3>
-          <li><a href="#">Texto exemplo</a></li>
-          <li><a href="#">Texto exemplo</a></li>
-          <li><a href="#">Texto exemplo</a></li>
-          <li><a href="#">Texto exemplo</a></li>
-
-        </ul>
-        <ul>
-          <h3>Github</h3>
-          <li><a href="#">Texto exemplo</a></li>
-          <li><a href="#">Texto exemplo</a></li>
-          <li><a href="#">Texto exemplo</a></li>
-          <li><a href="#">Texto exemplo</a></li>
-
-        </ul>
-        <ul>
-          <h3>Suporte</h3>
-          <li><a href="#">Texto exemplo</a></li>
-          <li><a href="#">Texto exemplo</a></li>
-          <li><a href="#">Texto exemplo</a></li>
-          <li><a href="#">Texto exemplo</a></li>
-
-        </ul>
-      </div>
-  </footer>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="/materialize/js/materialize.min.js"></script>
 
 </body>
+
+
 </html>
