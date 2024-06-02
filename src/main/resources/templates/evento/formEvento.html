@@ -1,65 +1,65 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org"
-      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" lang="pt-br">
+      lang="pt-br">
 <head>
-    <title>Cadastrar Evento</title>
-
-    <!--Import Google Icon Font-->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
-    <!--Import materialize.css-->
-    <link type="text/css" rel="stylesheet" href="/materialize/css/materialize.min.css"  media="screen,projection"/>
-
-    <!--Let browser know website is optimized for mobile-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="stylesheet" href="/style/styleCss.css" />
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ProjectP</title>
+  <link rel="stylesheet" href="style/styleCss.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
 </head>
 <body>
-
-<header>
-    <nav class="menu">
-        <div class="nav-wrapper">
-            <a href="#" class="brand-logo">Cadastro de Eventos:</a>
-            <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a href="/eventos" class="waves-effect waves-light btn"><i
-                        class="material-icons left">format_list_bulleted</i>Lista de Eventos</a></li>
-            </ul>
+    <header>
+    <nav class="navbar-formEvento">
+        <div>
+          <a href="/" class="logo-formEvento"><!--<img src=".png" alt="logo">-->ProjectP</a>
+        </div>
+          <div class="account-formEvento">
+            <a class="cadastroEvento">Cadastro de Eventos</a>
         </div>
     </nav>
-
-</header>
+    </header>
 
 
 <th:block th:insert="~{mensagemValidacao}"></th:block>
-<div class="container formEvento">
+<div class="container-formEvento formEvento">
 
-    <form class="container" method="post">
-        <p class="textFormEvento"> Nome: </p> <input type="text" value="" name="nome" />
+    <form class="container-formEvento" method="post">
         <div class="row">
-            <div class="input-field col s6">
-                <p class="textFormEvento"> Local: </p><input type="text" value="" name="local" />
+            <div class="input-field">
+            <p class="text-formEvento"> Nome: </p> <input class="box-formEventos" type="text" value="" name="nome" />
             </div>
-            <div class="input-field col s3">
-                <p class="textFormEvento">Data: </p><input type="date" value="" name="data" />
+            <div class="input-field">
+                <p class="text-FormEvento"> Local: </p><input class="box-formEventos" type="text" value="" name="local" />
             </div>
-            <div class="input-field col s3">
-                <p class="textFormEvento"> Horario: </p><input type="time" value="" name="horario" />
+            <div class="input-field">
+                <p class="text-FormEvento">Data: </p><input class="box-formEventos" type="date" value="" name="data" />
             </div>
-            <div class="input-field col s3">
-                <p class="textFormEvento"> Horario Final: </p><input type="time" value="" name="horarioFinal" />
+            <div class="input-field">
+                <p class="text-FormEvento"> Horario: </p><input class="box-formEventos" type="time" value="" name="horario" />
             </div>
-            <div class="input-field col s9">
-                <p class="textFormEvento"> Observação: </p><input type="text" value="" name="detalhes" />
+            <div class="input-field">
+                <p class="text-FormEvento"> Horario Final: </p><input class="box-formEventos" type="time" value="" name="horarioFinal" />
             </div>
-
+            <div class="input-field">
+                <p class="text-FormEvento"> Observação: </p><input class="box-formEventos" type="text" value="" name="detalhes" />
+            </div>
+            <div class="controlbutton-formEvento">
+            <button class="button-formEvento" type="submit">Salvar</button>
+            </div>
         </div>
-        <button class="waves-effect waves-light btn-small" type="submit"><i class="material-icons right">send</i>Salvar</button>
-
+        <div class="image-formEvento">
+            <label class="textimage-formEvento" for="img">
+                Clique e selecione uma imagem:
+                <input type="file" id="img" name="img" accept="image/*" style="display: none;">
+            </label>
+        </div>
     </form>
+
 </div>
 
-<!--JavaScript at end of body for optimized loading-->
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-<script type="text/javascript" src="/materialize/js/materialize.min.js"></script>
+<script type="text/javascript" src="materialize/js/materialize.min.js"></script>
+  
 </body>
 </html>
