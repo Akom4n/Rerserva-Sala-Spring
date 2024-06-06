@@ -35,9 +35,9 @@ public class EventoController {
     public String form(@Valid Evento evento, BindingResult result, RedirectAttributes attributes){
         try {
             if(evento.getHorario().isAfter(evento.getHorarioFinal())){
-                attributes.addFlashAttribute("mensagem", "Horario incompativel, por favor alterar!");
-                evento.setHorarioInvalido(true);
-                return "redirect:/cadastrarEvento";
+                    attributes.addFlashAttribute("mensagem", "Horario incompativel, por favor alterar!");
+                    evento.setHorarioInvalido(true);
+                    return "redirect:/cadastrarEvento";
             }
             if (evento.getHorario().equals(evento.getHorarioFinal())) {
                 attributes.addFlashAttribute("mensagem", "Horario incompativel, por favor alterar!");
@@ -110,9 +110,9 @@ public class EventoController {
             return "redirect:/{codigo}";
         }
         catch (Exception e) {
-            attributes.addFlashAttribute("mensagem", "Verifique!");
-            return "redirect:/{codigo}";
-        }
+                attributes.addFlashAttribute("mensagem", "Verifique!");
+                return "redirect:/{codigo}";
+            }
     }
 
     //Bom... aqui vc deleta o convidado
